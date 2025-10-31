@@ -15,6 +15,8 @@ def verify(helmet_id: str, user_id: str):
         return {"status": "verified ✅"}
     else:
         raise HTTPException(status_code=403, detail="Helmet not registered ❌")
+
+# --- Add this block so FastAPI runs correctly ---
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000)
